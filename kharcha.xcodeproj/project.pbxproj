@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D3A370C42980A477003E61E0 /* main.ledger in Resources */ = {isa = PBXBuildFile; fileRef = D3A370C32980A477003E61E0 /* main.ledger */; };
 		D3A5AE5529807A0B0002CA28 /* Journal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A5AE5429807A0B0002CA28 /* Journal.swift */; };
 		D3C2A509297F35A100C009D4 /* kharchaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2A508297F35A100C009D4 /* kharchaApp.swift */; };
 		D3C2A50B297F35A100C009D4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C2A50A297F35A100C009D4 /* ContentView.swift */; };
@@ -18,7 +17,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D3A370C32980A477003E61E0 /* main.ledger */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.ledger; sourceTree = "<group>"; };
 		D3A5AE5429807A0B0002CA28 /* Journal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Journal.swift; sourceTree = "<group>"; };
 		D3C2A505297F35A100C009D4 /* kharcha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = kharcha.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3C2A508297F35A100C009D4 /* kharchaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kharchaApp.swift; sourceTree = "<group>"; };
@@ -43,7 +41,6 @@
 		D3A5AE56298096C40002CA28 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D3A370C32980A477003E61E0 /* main.ledger */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -162,7 +159,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3C2A510297F35A200C009D4 /* Preview Assets.xcassets in Resources */,
-				D3A370C42980A477003E61E0 /* main.ledger in Resources */,
 				D3C2A50D297F35A200C009D4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

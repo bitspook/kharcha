@@ -16,9 +16,12 @@ struct DateJournal: Identifiable {
 
 final class Journal: ObservableObject {
     @Published var groupedByDate: [DateJournal] = []
-    let entries = loadJournal()
+    var entries: [JournalEntry] = []
     
-    init() {
+    init() {}
+    func load(_ fileUrl: URL) {
+        entries = loadJournal(fileUrl)
+        groupedByDate = []
         var groups: [Date: [JournalEntry]] = [:];
         
         for entry in entries {
@@ -35,17 +38,13 @@ final class Journal: ObservableObject {
     }
 }
                        
-func loadJournal() -> [JournalEntry] {
-    let filename = "main.ledger"
-    guard let file = Bundle.main.url(forResource: filename, withExtension: nil) else {
-        fatalError("\(filename) should be available in main bundle")
-    }
-    
+func loadJournal(_ fileUrl: URL) -> [JournalEntry] {
     var journalText = ""
     do {
-        journalText = try String(contentsOf: file)
+        let _ = fileUrl.startAccessingSecurityScopedResource()
+        journalText = try String(contentsOf: fileUrl)
     } catch {
-        fatalError("Could not read \(filename) from main bundle:\n\(error)")
+        fatalError("Could not read \(fileUrl):\n\(error)")
     }
 
     do {
