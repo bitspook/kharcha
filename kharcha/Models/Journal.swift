@@ -19,8 +19,8 @@ final class Journal: ObservableObject {
     var entries: [JournalEntry] = []
     
     init() {}
-    func load(_ fileUrl: URL) {
-        entries = loadJournal(fileUrl)
+    func load(_ fileUrl: URL) throws {
+        entries = try loadJournal(fileUrl)
         groupedByDate = []
         var groups: [Date: [JournalEntry]] = [:];
         
@@ -38,20 +38,12 @@ final class Journal: ObservableObject {
     }
 }
                        
-func loadJournal(_ fileUrl: URL) -> [JournalEntry] {
+func loadJournal(_ fileUrl: URL) throws -> [JournalEntry] {
     var journalText = ""
-    do {
         let _ = fileUrl.startAccessingSecurityScopedResource()
         journalText = try String(contentsOf: fileUrl)
-    } catch {
-        fatalError("Could not read \(fileUrl):\n\(error)")
-    }
 
-    do {
        return try parseJournal(journalText)
-    } catch {
-        fatalError("Failed to parse journal: \(error)")
-    }
 }
 
 func parseJournal(_ text: String) throws -> [JournalEntry] {
