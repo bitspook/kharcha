@@ -1,0 +1,41 @@
+* Kharcha
+
+Kharcha is an iOS app which provides a UI for [[https://github.com/simonmichael/hledger][ledger]] file of my everyday
+expenses.
+
+** Objective
+
+1. Provide insight into my expenses
+
+   - Answer questions about things I have purchased in past. For example:
+     - How has the price of <X> changed? e.g show a graph of price over time
+     - What is the cheapest place I bought <X> from?
+     - How much money has spent in <Y> store?
+   - Help me to find and fix cognitive biases in my spending habits
+
+2. Planning expenses
+
+   - Help me plan things I want to purchase from where and when to purchase
+     them
+   - Help me answer questions like
+     - Which store should I visit for purchasing everything in my list?
+
+3. Optimize value for money
+
+   - Optimize for getting maximum value for money spent
+   - It should take into account the quality of things I buy when optimizing
+     for price and not just pick the cheapest items. I don't want to save 20
+     cents and get cancer instead.
+
+4. Set and achieve hedonistic goals
+
+   - Help me identify certain things as hedonistic and help me get them without
+     putting a dent in my budget. For example it should help me squeeze a few
+     pennies by shifting my spending habits a little bit and contribute to
+     purchasing nice-to-have things
+
+** Inspiration
+
+I have recently relocated to Berlin. I am in that phase where everything seems
+outrageously expensive, which make me very anxious. This app is one of my
+attempts to channelize this anxiety into learning and building something useful.
