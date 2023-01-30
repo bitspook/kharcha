@@ -7,31 +7,27 @@
 
 import SwiftUI
 
+private enum Field {
+    case search
+}
+
 struct ContentView: View {
     @State var filter: String = ""
     @State var error: String = ""
     @State var showFilePicker = false
+    @FocusState private var focusedField: Field?
     @EnvironmentObject var journal: Journal
     
     var body: some View {
         VStack {
-            Button("Select Ledger File") {
-                showFilePicker = true
-                error = ""
-            }.fileImporter(isPresented: $showFilePicker, allowedContentTypes: [.data]) { (res) in
-                do {
-                    let fileUrl = try res.get()
-                    try journal.load(fileUrl)
-                } catch {
-                    self.error = "Failed to load ledger"
-                }
-            }
+            
+            TextField("Filter by description", text: $filter)
+                .focused($focusedField, equals: .search)
             if !error.isEmpty {
                 Spacer()
                 Text(error).foregroundColor(.red)
                 Spacer()
             } else {
-                TextField("Filter by description", text: $filter)
                 List(journal.groupedByDate) { dateJournal in
                     let entries = filter.count != 0 ?
                     dateJournal.entries.filter({
@@ -62,10 +58,30 @@ struct ContentView: View {
                             }
                         }
                     }
+                }.onTapGesture {
+                    focusedField = nil
+                }
+            }
+            Spacer()
+            ControlGroup{
+                Button(action: { focusedField = Field.search }) {
+                    Label("Search", systemImage: "magnifyingglass")
+                }
+                Button(action: {
+                    showFilePicker = true
+                    error = ""
+                }) {
+                    Label("Select Ledger", systemImage: "doc.fill.badge.plus")
+                }
+            }.fileImporter(isPresented: $showFilePicker, allowedContentTypes: [.data]) { (res) in
+                do {
+                    let fileUrl = try res.get()
+                    try journal.load(fileUrl)
+                } catch {
+                    self.error = "Failed to load ledger"
                 }
             }
         }
-        .padding()
     }
 }
 
