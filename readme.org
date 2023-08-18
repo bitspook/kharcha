@@ -1,4 +1,6 @@
-> ⚠️ I am archiving this because fuck Apple. Twats won't allow me to run the app I build on my own phone more than a week without rebuild. I'll probably build a web version of this sometime soon.
+#+begin_quote
+⚠️ I am archiving this because fuck Apple. Twats won't allow me to run the app I build on my own phone more than a week without rebuild. I'll probably build a web version of this sometime soon.
+#+end_quote
 
 * Kharcha
 
