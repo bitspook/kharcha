@@ -1,3 +1,5 @@
+> ⚠️ I am archiving this because fuck Apple. Twats won't allow me to run the app I build on my own phone more than a week without rebuild. I'll probably build a web version of this sometime soon.
+
 * Kharcha
 
 Kharcha is an iOS app which provides a UI for [[https://github.com/simonmichael/hledger][ledger]] file of my everyday
